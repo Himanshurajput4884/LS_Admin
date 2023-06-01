@@ -87,13 +87,17 @@ function CreateQuiz() {
               placeholder="Enter Quizname"
             />
           </div>
-          <div className="form_input">
-            <label htmlFor="Subject 1">Subject 1</label>
+          <div className="form_input" style={{display: "flex",
+    "flex-direction": "column"}}>
+            <label htmlFor="Subject 1"><h5> Subject 1 </h5></label>
             <select
               id="subject1"
               name="choice1"
               value={formData.choice1}
               onChange={setVal}
+              style={{    border: "1px solid #d4d0d0",
+              "border-radius": "10px",
+              padding: "2px 2px"}}
             >
               <option value=""> Choose </option>
               <option value="animals">Animals</option>
@@ -108,13 +112,17 @@ function CreateQuiz() {
               <option value="world_war1">World War 1</option>
             </select>
           </div>
-          <div className="form_input">
-            <label htmlFor="Subject 2"> Subject 2 </label>
+          <div className="form_input" style={{display: "flex",
+    "flex-direction": "column"}}>
+            <label htmlFor="Subject 2"><h5> Subject 2 </h5></label>
             <select
               id="subject2"
               name="choice2"
               value={formData.choice2}
               onChange={setVal}
+              style={{    border: "1px solid #d4d0d0",
+              "border-radius": "10px",
+              padding: "2px 2px"}}
             >
               <option value=""> Choose </option>
               <option value="animals">Animals</option>
@@ -129,13 +137,17 @@ function CreateQuiz() {
               <option value="world_war1">World War 1</option>
             </select>
           </div>
-          <div className="form_input">
-            <label htmlFor="Subject 3"> Subject 3 </label>
+          <div className="form_input" style={{display: "flex",
+    "flex-direction": "column"}}>
+            <label htmlFor="Subject 3"><h5> Subject 3 </h5></label>
             <select
               id="subject3"
               name="choice3"
               value={formData.choice3}
               onChange={setVal}
+              style={{    border: "1px solid #d4d0d0",
+                "border-radius": "10px",
+                padding: "2px 2px"}}
             >
               <option value=""> Choose </option>
               <option value="animals">Animals</option>
@@ -162,17 +174,24 @@ function CreateQuiz() {
             />
           </div>
           <div>
-            <label htmlFor="date"> Date </label>
+            <label htmlFor="date"><h5> Date </h5></label>
             <DatePicker
               selected={formData.date}
               onChange={setDate}
               minDate={new Date()}
               dateFormat="dd/MM/yyyy"
               placeholderText="Select date"
+              style={{    border: "1px solid grey",
+                "border-radius": "5px",
+                padding: "4px 4px",
+                width: "100%"}}
             />
           </div>
-          <div>
-            <label htmlFor="time"> Time </label>
+          <div style={{display: "flex",
+    "flex-direction": "row",
+    "justify-content": "space-between",
+    width: "30%", margin:"8px 0px"}}>
+            <label htmlFor="time"><h5> Time </h5></label>
             <TimePicker
               value={formData.time}
               onChange={setTime}

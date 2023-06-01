@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink ,useNavigate} from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
-import axios from 'axios';
+import "./mix.css";
 
 const Login = () => {
 
@@ -50,6 +50,7 @@ const Login = () => {
 
             console.log(data);
             localStorage.setItem("adminDataToken", data.token);
+            console.log("LoggedIn");
             history("/dash");
             setInpval({...inpval, username:"", password:""});
           }
