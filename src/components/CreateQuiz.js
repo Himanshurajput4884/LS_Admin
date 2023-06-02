@@ -43,11 +43,11 @@ function CreateQuiz() {
           position: "top-center",
         });
       } else {
-        const data = fetch("http://localhost:8008/newquiz", {
+        const data = await fetch("http://localhost:8008/newquiz", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: token,
+            "authorization": token,
             Accept: "application/json",
           },
           body: JSON.stringify({ quizname, choice1, choice2, choice3, prize, date, time }),
@@ -55,13 +55,16 @@ function CreateQuiz() {
 
         const res = await data.json();
 
-        toast.success("Quiz Created", {
-          position: "top-right",
-        });
+        if(res.message === "Quiz created."){
+          toast.success("Quiz Created", {
+            position: "top-right",
+          });
+  
+          setTimeout(() => {
+            navigate("/dash");
+          }, 3000);
+        }
 
-        setTimeout(() => {
-          navigate("/dash");
-        }, 3000);
       }
     } catch (err) {
       console.log("Error: ", err);
